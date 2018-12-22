@@ -1,0 +1,159 @@
+			
+2016B3A70492P  Priyanka Verma , 2017A7PS0040P Shaily Bhatt
+
+Query description
+	packet(A,B,V,P,C,D,E,F,G)
+	This predicate takes the input for testing
+
+1. Adapter 
+
+	adapter_accepted_list([]) 
+	This predicate is used to store the acceptable values of adapter clause.
+
+	adapter_rejected_list([])
+	This predicate is used to store the rejectable values of adapter clause.
+
+	adapter_accept(X)
+	This predicate is 'true' in the acceptable values of adapter clause.
+
+	adapter_reject(X)
+	This predicate is 'true' in the rejectable values of adapter clause.
+
+2. Ipv4
+
+	ipv4_accept(X)
+	This predicate is 'true' in the acceptable values of Ipv4.
+
+	ipv4_reject(X)
+	This predicate is 'true' in the rejected values of Ipv4.
+
+	NOTE- ipv4 cannot be null.
+
+
+3. Ethernet 
+
+	list_accept_ethernet([])
+	This predicate is used to store the acceptable values of ethernet proto clause.
+
+	list_reject_ethernet([])
+	This predicate is used to store the rejectable values of ethernet proto clause.
+	
+	ethernet_proto_accept(X)
+	This predicate returns 'true' in the acceptable values of ethernet proto clause.
+
+	ethernet_proto_reject(X)
+	This predicate returns 'true' in the rejectable values of ethernet proto clause.
+
+	ethernet_vid_accept(X)
+	This predicate returns 'true' in the acceptable values of ethernet vid clause.
+
+	ethernet_vid_reject(X)
+	This predicate returns 'true' in the rejectable values of ethernet vid clause.
+	
+
+	NOTE - null is rejected
+
+4.	Tcp or Udp
+	
+	tcp_accept(X,Y)
+	This predicate is 'true' in the acceptable values of tcp.
+
+	tcp_reject(X,Y)
+	This predicate is 'true' in the rejected values of tcp.
+
+	Decision based on following predicates: 
+
+		tcpsrc_acceptrange(X)
+		This predicate defines range of accepted values for tcp source address
+		
+		tcpsrc_rejectrange(X)
+		This predicate defines range of rejected values for tcp source address
+
+		tcpdes_acceptrange(X)
+		This predicate defines range of accepted values for tcp destination address
+
+		tcpdes_rejectrange(X)
+		This predicate defines range of rejected values for tcp destination address
+
+	udp_reject(X,Y)
+	This predicate is 'true' in the rejected values of udp.
+
+	udp_accept(X,Y)
+	This predicate is 'true' in the accepted values of udp.
+
+	Decision based on following predicates: 
+
+		udpsrc_acceptrange(X)
+		This predicate defines range of accepted values for udp source address
+
+		udpsrc_rejectrange(X)
+		This predicate defines range of rejected values for udp source address
+
+		udpdes_acceptrange(X)
+		This predicate defines range of accepted values for udp destination address
+
+		udpdes_rejectrange(X)
+		This predicate defines range of rejected values for tcp destination address
+
+
+	Finally 
+
+	tcpudp_accept(A,B,C,D)
+	This predicate is 'true' in the acceptable values of tcp/udp.
+
+	tcpudp_reject(A,B,C,D)
+	This predicate is 'true' in the rejectable values of tcp/udp.
+
+
+
+5. Icmp 
+
+	icmp_accept_list([])
+	This predicate is used to store the acceptable values of icmp Type clause.
+
+	icmp_reject_list([]])
+	This predicate is used to store the rejectable values of icmp Type clause.
+
+	icmp_reject(X)
+	This predicate is 'true' in the rejectable values of icmp.
+
+	icmp_accept(X)
+	This predicate is 'true' in the acceptable values of icmp.
+
+
+6. Based on the clauses for each parameter we check for following: 
+
+	accept(A,B,V,P,C,D,E,F,G) 
+	This predicate is true when all the input values are in their respective accept region 
+
+	reject(A,B,V,P,C,D,E,F,G)
+	This predicate is true when any of the input values is in its respective reject region 
+
+	drop(A,B,V,P,C,D,E,F,G)
+	This predicate is true for all other cases of input values
+
+
+7.  Other Helpful predicates
+	
+	split_string(A,"<delimiter>","<delimiter>",List)
+	Built-in predicate used to split string input based on delimiters and stores it in List
+
+	inRange(List,Lo,Hi)
+	checks whether all elements of List are in between Lo and Hi
+
+	number_codes(X,Y)
+	Built-in predicate to convert string of number to integer
+
+
+	write()
+	This built-in predicate displays the output on console
+
+	member(X,L)
+	This predicate checks if X is a member of list L
+
+	match(X,L)
+	This predicate checks if any elements of list 'L' is present in list 'X'
+
+
+
+

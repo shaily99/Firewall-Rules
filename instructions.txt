@@ -1,0 +1,129 @@
+//Shaily Bhatt - 2017A7Ps0040P; Priyanka Verma - 2016B3A7PS0492P	
+	
+				Instructions
+
+Query Description :
+	packet(A,B,V,P,C,D,E,F,G)
+
+	NOTE : If user does not know value for a particular parameter then '-1' is to be passed ie Null case.
+	NOTE: Atleast one input value needs to be specified from tcp ('C' and 'D') or udp ('E' and 'F').
+	NOTE: Compulsory input required in 'B' ipv4 ie Ip address can't be null
+
+
+1. Input format
+packet(A,B,V,P,C,D,E,F,G,H) where :
+			
+  'A' is adapter value.
+  		Format: list of strings, each string is a single small alphabet, 'any'.
+  		Examples :  A = ["any"] 
+  			    A = ["b","c"] 
+  		            A = ["d"]
+  	 
+  'B' is ipv4 address 
+  		Format a.b.c.d where each 'a','b,'c','d' is a number.
+  		Examples : "100.3.255.56"
+
+  'V' is ethernet vid value  .
+  		Format: list of "number". 
+  		Examples :  ["3"]
+  			    ["65","100"]
+
+  'P' is ethernet proto value 
+   		Format: "number" or  "aarp", 'atalk', 'mpls', 'netbui', 'rarp', 'sna', 'xns', 'ipx', 'pppoe','arp' in list. 
+   		Examples: 	        ["ipx", "pppoe"]
+   					["ipx"]
+   					["6"]
+   					["5","7"]
+
+  'C' is tcp source address 
+  		Format : list of "number" 
+  		Example:		["4"]
+  					["7","22"]
+  'D' is tcp destination address 
+  		Format : list of "number"
+  		Example:		["4"]
+  					["7","22"]
+
+  'E' is udp source address
+  		Format : list of "number"
+  		Example:		["4"]
+  					["7","22"]	
+
+  'F' is udp destination adddress
+  		Format : list of strings
+  		Example:		["4"]
+  					["7","22"]
+
+   'G' is icmp Type  
+  		Format: list of strings 
+  		Example: 	 ["2"]
+  				 ["1"]
+  				 ["-1"] (icmp input is absent, hence accepted)
+
+
+
+									Database Rules  
+			
+1. Adapter 
+
+	'any' is an acceptable adapter
+	
+	'a', 'b', 'c', 'd', 'e' accepted adapter 
+	
+	'f', 'g', 'h' rejected adapter values
+	
+	all other values are dropped by default
+
+	Null value is taken as -1 and is accepted. 
+
+	input can be a single adapter or a list of adapters. */
+
+
+2.Ipv4 
+	
+	ipv4 is accepted if each of the number is between 101 to 255 
+
+	ipv4 is rejected if each of the number is between 0 to 100
+
+
+ 3.Ethernet 
+	
+	ethernet proto clause is accepted if the input values from  'rarp','sna','xns', 10,11,12,13,14,15,16,17,18,19.
+
+	ethernet proto clause is rejected even if one of the input is in 'ipx,pppoe,arp,0,1,2,3,4,5,6,7,8,9'  
+
+	ethernet vid clause is rejected even if one of the input is range is 0 to 50. or null  
+
+	ethernet vid clause is accepted if input number(s) lies between 51 to 399 
+
+
+
+4. Tcp/ udp
+	
+	tcp is accepted if both tcp source and destination address are in accept range ie from 0 to 100
+
+	tcp is rejected if either tcp source or destination address is in reject range ie from 101 to 200
+
+	udp is accepted if both udp source and destination address are in accept range ie 0 to 200
+
+	udp is rejected if either udp source or destination address is in reject range ie 201 to 500
+
+
+
+5.  Icmp 
+
+	accepted if icmp type is 0,1,25,50 
+
+	-1 (i.e null ) is also accepted 
+
+	rejected if icmp type is 2,11 and writes 'icmp rejection' on terminal	
+
+
+	
+
+
+
+
+
+	
+
