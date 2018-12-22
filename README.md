@@ -11,6 +11,6 @@ It is a **prolog** encoding of Firewall rules.
 
 #### Documentation - 
 [Firewall language rules](Firewall_rules_language.md) <br>
-[Firewall language syntax](Firewall_rules_synatx.md)
+[Firewall language syntax](Firewall_rules_syntax.md)
 
 Write a Prolog program to apply encoded rules on any incoming packet. Note that multiple rules may apply.
