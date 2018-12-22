@@ -14,3 +14,12 @@ It is a **prolog** encoding of Firewall rules.
 [Firewall language syntax](Firewall_rules_syntax.md)
 
 Write a Prolog program to apply encoded rules on any incoming packet. Note that multiple rules may apply.
+
+
+
+## The Solution
+
+[Code](Code.pl) contains the prolog encoding <br>
+[Instructions](instructions.txt) contains the instructions for passing query ti the prolog program <br>
+[Database](Database.txt) contains a list of all predicates used in prolog code to encode the rules <br>
+[Sample Inputs](inputFile.txt) contains some sample input queries along with the obtained outputs
