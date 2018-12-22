@@ -1,6 +1,6 @@
 # Firewall-Rules
 
-This repository contains assignment submission to the course 'Logic in Computer Science' at BITS Pilani by me and @PriyankaVerma98.
+This repository contains assignment submission to the course 'Logic in Computer Science' at BITS Pilani by me and [Priyanka Verma](www.github.com/PriyankaVerma98).
 
 It is a **prolog** encoding of Firewall rules.
 <br>
